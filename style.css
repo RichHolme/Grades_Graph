@@ -1,0 +1,33 @@
+nav .brand-logo{
+	padding-left: 10% !important;
+}
+
+#graphUL{
+	padding-right: 10%;
+}
+
+.navbar-fixed{
+	margin-bottom: 5%;
+}
+
+#gifImage,
+#triangleImage{
+	margin-top: 10%;
+}
+
+.show_right{
+	margin-right: 100px !important;
+}
+.show_left{
+	margin-left: 100px !important;
+}
+
+.material-icons{
+	white-space: normal !important;
+	cursor: pointer;
+}
+
+.avg{
+	font-size: 25px;
+	display: inline-block;
+}
