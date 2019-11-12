@@ -33,13 +33,13 @@ $( document ).ready(function() {
 
 	    // The data for our dataset
 	    data: {
-	        labels: ['Aug 15 2019', 'Aug 25 2019', 'Sept 22 2019', 'Oct 21 2019', 'Oct 26 2019'],
+	        labels: ['Aug 15 2019', 'Aug 25 2019', 'Sept 22 2019', 'Oct 21 2019', 'Oct 26 2019', 'Nov 6 2019'],
 	        datasets: [{
 	            label: 'Eng 231',
 	            borderColor: "#dd2c00",
 	            pointBackgroundColor: "#dd2c00",
 	            pointBorderColor: "#dd2c00",
-	            data: [100, 96.6, 89.73, 91.19, 90.97]
+	            data: [100, 96.6, 89.73, 91.19, 90.97, 90.68]
 	        }]
 	    },
 
