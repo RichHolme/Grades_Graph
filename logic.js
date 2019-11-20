@@ -12,13 +12,13 @@ $( document ).ready(function() {
 
 	    // The data for our dataset
 	    data: {
-	        labels: ['Aug 15 2019', 'Sept 18 2019', 'Sept 30 2019', 'Oct 10 2019', 'Oct 11 2019', 'Oct 22 2019', 'Nov 5 2019'],
+	        labels: ['Aug 15 2019', 'Sept 18 2019', 'Sept 30 2019', 'Oct 10 2019', 'Oct 11 2019', 'Oct 22 2019', 'Nov 5 2019', 'Nov 19 2019'],
 	        datasets: [{
 	            label: 'Mat 172',
 	            borderColor: "#dd2c00",
 	            pointBackgroundColor: "#dd2c00",
 	            pointBorderColor: "#dd2c00",
-	            data: [100, 83.79, 83.89, 83.80, 89.00, 89.42, 89.30]
+	            data: [100, 83.79, 83.89, 83.80, 89.00, 89.42, 89.30, 90.45]
 	        }]
 	    },
 
