@@ -1,57 +1,156 @@
 $( document ).ready(function() {
 
 	$(".dropdown-trigger").dropdown();
-	$("#chart2Div").hide();
 
-	$(".brand-logo").text('Fall 2019')
+	$(".brand-logo").text('Fall 2019');
+
+	var indexOuter = 0;
+	var indexInner = 0;
+
+	var dates = [
+		[
+			['Aug 15 2019', 'Sept 18 2019', 'Sept 30 2019', 'Oct 10 2019', 'Oct 11 2019', 'Oct 22 2019', 'Nov 5 2019', 'Nov 19 2019'],
+			['Aug 15 2019', 'Aug 25 2019', 'Sept 22 2019', 'Oct 21 2019', 'Oct 26 2019', 'Nov 6 2019']
+		],
+		[
+			['Date'],
+			['Date']
+		],
+		[
+			['Date'],
+			['Date']
+		],
+		[
+			['Date'],
+			['Date']
+		],
+		[
+			['Date'],
+			['Date']
+		],
+		[
+			['Date'],
+			['Date']
+		],
+		[
+			['Date'],
+			['Date']
+		],
+		[
+			['Date'],
+			['Date']
+		],
+		[
+			['Date'],
+			['Date']
+		]
+	];
+
+	var labels = [
+		[
+			'Mat 172', 'Eng 231'
+		],
+		[	
+			'Class', 'Class'
+		], 
+		[	
+			'Class', 'Class'
+		],
+		[	
+			'Class', 'Class'
+		],
+		[
+			'Class', 'Class'
+		],
+		[	
+			'Class', 'Class'
+		], 
+		[	
+			'Class', 'Class'
+		],
+		[	
+			'Class', 'Class'
+		],
+		[
+			'Class', 'Class'
+		]
+	];
+
+	var data = [
+		[
+			[100, 83.79, 83.89, 83.80, 89.00, 89.42, 89.30, 90.45],
+			[100, 96.6, 89.73, 91.19, 90.97, 90.68]
+		],
+		[
+			[100],
+			[100]
+		],
+		[
+			[100],
+			[100]
+		],
+		[
+			[100],
+			[100]
+		],
+		[
+			[100],
+			[100]
+		],
+		[
+			[100],
+			[100]
+		],
+		[
+			[100],
+			[100]
+		],
+		[
+			[100],
+			[100]
+		],
+		[
+			[100],
+			[100]
+		]
+	]
 
 	var ctx = document.getElementById('myChart').getContext('2d');
-	var chart = new Chart(ctx, {
+	chartObj = {
 	    // The type of chart we want to create
 	    type: 'line',
 
 	    // The data for our dataset
 	    data: {
-	        labels: ['Aug 15 2019', 'Sept 18 2019', 'Sept 30 2019', 'Oct 10 2019', 'Oct 11 2019', 'Oct 22 2019', 'Nov 5 2019', 'Nov 19 2019'],
+	        labels: dates[indexOuter][indexInner],
 	        datasets: [{
-	            label: 'Mat 172',
+	            label: labels[indexOuter][indexInner],
 	            borderColor: "#dd2c00",
 	            pointBackgroundColor: "#dd2c00",
 	            pointBorderColor: "#dd2c00",
-	            data: [100, 83.79, 83.89, 83.80, 89.00, 89.42, 89.30, 90.45]
+	            data: data[indexOuter][indexInner]
 	        }]
 	    },
 
 	    // Configuration options go here
-	    options: {}
-	});
+	    options: {} 
+	}
 
-	var ctx2 = document.getElementById('myChart2').getContext('2d');
-	var chart2 = new Chart(ctx2, {
-	    // The type of chart we want to create
-	    type: 'line',
-
-	    // The data for our dataset
-	    data: {
-	        labels: ['Aug 15 2019', 'Aug 25 2019', 'Sept 22 2019', 'Oct 21 2019', 'Oct 26 2019', 'Nov 6 2019'],
-	        datasets: [{
-	            label: 'Eng 231',
-	            borderColor: "#dd2c00",
-	            pointBackgroundColor: "#dd2c00",
-	            pointBorderColor: "#dd2c00",
-	            data: [100, 96.6, 89.73, 91.19, 90.97, 90.68]
-	        }]
-	    },
-
-	    // Configuration options go here
-	    options: {}
-	});
+	var chart = new Chart(ctx, chartObj);
 
 	displayAvg(chart);
 
 	$(".semesterSelector").on('click', function(){
 		var header = $(this).text();
-		$(".brand-logo").text(header)
+		$(".brand-logo").text(header);
+		var semesterIndex = $(this).data("index");
+		console.log(semesterIndex);
+		indexOuter = semesterIndex;
+		chartObj.data.datasets[0].label = labels[indexOuter][indexInner];
+		chartObj.data.labels = dates[indexOuter][indexInner];
+		chartObj.data.datasets[0].data = data[indexOuter][indexInner];
+		chart = new Chart(ctx, chartObj);
+		displayAvg(chart);
 	})
 
 	function displayAvg(dChart){
@@ -60,15 +159,27 @@ $( document ).ready(function() {
 	}
 
 	$(".show_right").on('click', function(){
-		$("#chart1Div").show();
-		$("#chart2Div").hide();
-		displayAvg(chart);
+
+		if(indexInner < 1){
+			indexInner++;
+			chartObj.data.datasets[0].label = labels[indexOuter][indexInner];
+			chartObj.data.labels = dates[indexOuter][indexInner];
+			chartObj.data.datasets[0].data = data[indexOuter][indexInner];
+			chart = new Chart(ctx, chartObj);
+			displayAvg(chart);
+		}
 	})
 
 	$(".show_left").on('click', function(){
-		$("#chart2Div").show();
-		$("#chart1Div").hide();
-		displayAvg(chart2);
+
+		if(indexInner > 0){
+			indexInner--;
+			chartObj.data.datasets[0].label = labels[indexOuter][indexInner];
+			chartObj.data.labels = dates[indexOuter][indexInner];
+			chartObj.data.datasets[0].data = data[indexOuter][indexInner];
+			chart = new Chart(ctx, chartObj);
+			displayAvg(chart);
+		}
 	})
 
 })
