@@ -13,8 +13,8 @@ $( document ).ready(function() {
 			['Aug 15 2019', 'Aug 25 2019', 'Sept 22 2019', 'Oct 21 2019', 'Oct 26 2019', 'Nov 6 2019', 'Nov 22 2019', 'Dec 2 2019', 'Dec 14 2019']
 		],
 		[
-			['Date'],
-			['Date']
+			['Jan 6 2020'],
+			['Jan 6 2020']
 		],
 		[
 			['Date'],
@@ -51,7 +51,7 @@ $( document ).ready(function() {
 			'Mat 172', 'Eng 231'
 		],
 		[	
-			'Class', 'Class'
+			'Mat 271', 'Eng 232'
 		], 
 		[	
 			'Class', 'Class'
