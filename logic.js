@@ -158,7 +158,16 @@ $( document ).ready(function() {
 		let len = dChart.data.datasets[0].data.length;
 
 		if(indexOuter < 1){
-			$(".avg").text(dChart.data.datasets[0].label + " Final Grade: " + dChart.data.datasets[0].data[len-1] + "%");
+
+			switch (true) {
+			  	case (dChart.data.datasets[0].data[len-1] >= 90): 
+				 	$(".avg").text(dChart.data.datasets[0].label + " Final Grade: A"); 
+				 	break;
+			 	case (dChart.data.datasets[0].data[len-1] < 90 && dChart.data.datasets[0].data[len-1] >= 80): 
+			  		$(".avg").text(dChart.data.datasets[0].label + " Final Grade: B"); 
+			  		break;
+			}
+
 		}else{
 			$(".avg").text(dChart.data.datasets[0].label + " Current Grade: " + dChart.data.datasets[0].data[len-1] + "%");
 		}
