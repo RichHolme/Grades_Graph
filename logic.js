@@ -141,6 +141,7 @@ $( document ).ready(function() {
 	displayAvg(chart);
 
 	$(".semesterSelector").on('click', function(){
+		indexInner = 0;
 		var header = $(this).text();
 		$(".brand-logo").text(header);
 		var semesterIndex = $(this).data("index");
@@ -155,7 +156,13 @@ $( document ).ready(function() {
 
 	function displayAvg(dChart){
 		let len = dChart.data.datasets[0].data.length;
-		$(".avg").text(dChart.data.datasets[0].label + " Current Grade: " + dChart.data.datasets[0].data[len-1] + "%");
+
+		if(indexOuter < 1){
+			$(".avg").text(dChart.data.datasets[0].label + " Final Grade: " + dChart.data.datasets[0].data[len-1] + "%");
+		}else{
+			$(".avg").text(dChart.data.datasets[0].label + " Current Grade: " + dChart.data.datasets[0].data[len-1] + "%");
+		}
+
 	}
 
 	$(".show_right").on('click', function(){
