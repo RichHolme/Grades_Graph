@@ -17,11 +17,10 @@ $( document ).ready(function() {
 			['Jan 6 2020', 'Jan 14 2020', 'Jan 16 2020', 'Jan 20 2020', 'Jan 21 2020', 'Jan 27 2020', 'Feb 4 2020', 'Feb 10 2020', 'Feb 11 2020', 'Feb 18 2020', 'Feb 26 2020', 'Mar 3 2020', 'Mar 5 2020', 'Mar 15 2020', 'Apr 2 2020', 'Apr 14 2020', 'Apr 20 2020', 'May 13 2020']
 		],
 		[
-			['May 20 2020', 'Jun 2 2020', 'Jun 16 2020', 'Jun 26 2020', 'Jul 10 2020']
+			['May 20 2020', 'Jun 2 2020', 'Jun 16 2020', 'Jun 26 2020', 'Jul 10 2020', 'Jul 25 2020']
 		],
 		[
-			['Date'],
-			['Date']
+			['Aug 26 2020', 'Sept 4 2020' ]
 		],
 		[
 			['Date'],
@@ -56,7 +55,7 @@ $( document ).ready(function() {
 			'Mat 272'
 		],
 		[	
-			'Class', 'Class'
+			'Mat 273', 
 		],
 		[
 			'Class', 'Class'
@@ -85,11 +84,10 @@ $( document ).ready(function() {
 			[100, 100, 100, 96.6, 97.5, 98.33, 97.5, 94.44, 95.45, 95.83, 98.21, 95.71, 89.99, 89.67, 89.87, 89.99, 90.11, 93.02]
 		],
 		[
-			[100, 94.99, 91.99, 93.14, 94.98]
+			[100, 94.99, 91.99, 93.14, 94.98, 96.7]
 		],
 		[
-			[100],
-			[100]
+			[100, 94.85]
 		],
 		[
 			[100],
@@ -155,7 +153,7 @@ $( document ).ready(function() {
 	function displayAvg(dChart){
 		let len = dChart.data.datasets[0].data.length;
 
-		if(indexOuter < 1){
+		if(indexOuter < 3){
 
 			switch (true) {
 			  	case (dChart.data.datasets[0].data[len-1] >= 90): 
